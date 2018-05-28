@@ -14,34 +14,33 @@ class Car extends AvtoPro
         return $html;
     }
 }
-$сarCooper = new Car();
-$сarAudi->marka = 'MINI';
-$сarAudi->modelavto = 'Cooper';
-$сarAudi->coloravto = 'grey';
 $сarBMV = new Car();
 $сarBMV->marka = 'BMV';
-$сarBMV->modelavto = 'X8';
+$сarBMV->modelavto = 'i8';
 $сarBMV->coloravto = 'red';
-
+$сarCooper = new Car();
+$сarCooper->marka = 'MINI';
+$сarCooper->modelavto = 'Cooper';
+$сarCooper->coloravto = 'grey';
 // Телевизор
 class TV
 {
-    public $marka;
+    public $markamodel;
     public $resolution;
     public $diagonal;
     public function getTV()
     {
-        echo $this->marka . ' ' . $this->resolution . ' ' . $this->diagonal;
+        echo $this->markamodel . ' ' . $this->resolution . ' ' . $this->diagonal;
     }
 }
 $tvSony = new TV();
-$tvSony->mark = 'Sony';
-$tvSony->resolution = 'FULL HD';
-$tvSony->diagonal = 'white';
+$tvSony->markamodel = 'Sony KD-65XE9305';
+$tvSony->resolution = 'HDR';
+$tvSony->diagonal = 46;
 $tvLG = new TV();
-$tvLG->mark = 'LG';
+$tvLG->markamodel = 'LG 43UH610V';
 $tvLG->resolution = '4K';
-$tvLG->diagonal = 'black';
+$tvLG->diagonal = 49;
 
 // Шариковая ручка
 class BallpointPen
@@ -55,29 +54,33 @@ class BallpointPen
     }
 }
 $penParker = new BallpointPen();
-$penParker->mark = 'Parker';
+$penParker->marka = 'Parker';
 $penParker->collection = 'Jotter';
 $penParker->color = 'black';
 $penPero = new BallpointPen();
-$penPero->mark = 'Pero';
+$penPero->marka = 'Pero';
 $penPero->collection = 'Caran';
 $penPero->color = 'black';
+
 // Утка
 class Duck
 {
-    public $breed;
-    public $dwelling;
+    public $species;
+    public $habitat;
+    public $edible;
     public function getDuck()
     {
-        echo $this->breed . ', обитание: ' . $this->dwelling;
-    }
-}
-$duckPekin = new Duck();
-$duckPekin->breed = 'Скрудж МакДак ';
-$duckPekin->dwelling = 'Дисней';
-$duckRussia = new Duck();
-$duckRussia->breed = 'Русская утка';
-$duckRussia->dwelling = 'Россия';
+        echo $this->species . ', be: ' . $this->habitat . ' ' . $this->edible;
+    } 
+}    
+$duckEn = new Duck();
+$duckEn->species = 'Scrooge McDuck ';
+$duckEn->habitat = 'Disney';
+$duckEn->edible = false;
+$duckRu = new Duck();
+$duckRu->species = 'Drake';
+$duckRu->habitat = 'Altai';
+$duckRu->edible = true;
 // Товар
 class Goods
 {
@@ -86,27 +89,28 @@ class Goods
     public $price;
     public function getGoods()
     {
-        echo $this->name . ' ' . $this->category . '' . $this->price;
+        echo $this->name . ' ' . $this->category . ' ' . $this->price;
     }
 }
-$goodsApple = new Goods();
-$goodsApple->name = 'iPhone';
-$goodsApple->category = 'Телефон';
-$goodsApple->price = 35000;
-$goodsSony = new Goods();
-$goodsSony->name = 'Sony XA';
-$goodsSony->category = 'Телефон';
-$goodsSony->price = 25000;
+$goodsCrisp = new Goods();
+$goodsCrisp->name = 'Lays';
+$goodsCrisp->category = 'FoodFastFood';
+$goodsCrisp->price = 69;
+$goodsPhone = new Goods();
+$goodsPhone->name = 'Sony X';
+$goodsPhone->category = 'Flagship';
+$goodsPhone->price = 40000;
 ?>
+
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 
     <title>Document</title>
 </head>
 <body>
-<?=$сarBMV->getCar();?>
+<?=$сarCooper->getCar();?>
 
 </body>
 </html>
