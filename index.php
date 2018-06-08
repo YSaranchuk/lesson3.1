@@ -1,27 +1,20 @@
 <?php
 // Машина
-class AvtoPro
-{
-    public $marka;
-    public $modelavto;
-    public $coloravto;
-}
-class Car extends AvtoPro
-{
-    public function getCar()
-    {
-        $html = $this->marka . ' ' . $this->modelavto . ' ' . $this->coloravto;
-        return $html;
+class Car {
+	public function __construct($marka, $coloravto, $price)
+	{
+		$this->marka = $marka;
+		$this->coloravto = $coloravto;
+        $this->price = $price;
+	}
+  
+    public function getPrice() {
+        echo $this->price;
     }
 }
-$сarBMV = new Car();
-$сarBMV->marka = 'BMV';
-$сarBMV->modelavto = 'i8';
-$сarBMV->coloravto = 'red';
-$сarCooper = new Car();
-$сarCooper->marka = 'MINI';
-$сarCooper->modelavto = 'Cooper';
-$сarCooper->coloravto = 'grey';
+
+$сarBMV = new Car('BMV i8', 'red', 2000000);
+$сarCooper = new Car('MINICooper', 'grey', 2500000);
 // Телевизор
 class TV
 {
