@@ -1,15 +1,13 @@
 <?php
 // Машина
 class Car {
-	public function __construct($marka, $coloravto, $price)
-	{
-		$this->marka = $marka;
-		$this->coloravto = $coloravto;
+    public function __construct($marka, $coloravto, $price) {
+        $this->marka = $marka;
+	$this->coloravto = $coloravto;
         $this->price = $price;
-	}
-  
-    public function getPrice() {
-        echo $this->price;
+    }
+     public function getPrice() {
+            echo $this->price;
     }
 }
 
