@@ -1,78 +1,56 @@
 <?php
-// Машина
 class Car {
     public function __construct($marka, $coloravto, $price) {
         $this->marka = $marka;
-	$this->coloravto = $coloravto;
+	    $this->coloravto = $coloravto;
         $this->price = $price;
     }
      public function getPrice() {
-            echo $this->price;
+        echo $this->marka . ' ' . $this->coloravto . ' ' . $this->price;
     }
 }
-
 $сarBMV = new Car('BMV i8', 'red', 2000000);
 $сarCooper = new Car('MINICooper', 'grey', 2500000);
-// Телевизор
-class TV
-{
-    public $markamodel;
-    public $resolution;
-    public $diagonal;
-    public function getTV()
-    {
+
+class TV {
+    public function __construct($markamodel, $resolution, $diagonal) {
+        $this->markamodel = $markamodel;
+	    $this->resolution = $resolution;
+        $this->diagonal = $diagonal;
+    }
+    public function getTV() {
         echo $this->markamodel . ' ' . $this->resolution . ' ' . $this->diagonal;
     }
 }
-$tvSony = new TV();
-$tvSony->markamodel = 'Sony KD-65XE9305';
-$tvSony->resolution = 'HDR';
-$tvSony->diagonal = 46;
-$tvLG = new TV();
-$tvLG->markamodel = 'LG 43UH610V';
-$tvLG->resolution = '4K';
-$tvLG->diagonal = 49;
+$tvSony = new TV('Sony KD-65XE9305', 'HDR', 46);
+$tvLG = new TV('LG 43UH610V', '4K', 49);
 
-// Шариковая ручка
-class BallpointPen
-{
-    public $marka;
-    public $collection;
-    public $color;
-    public function getPen()
-    {
+class BallpointPen {
+    public function __construct($marka, $collection, $color) {
+    $this->marka = $marka;
+    $this->collection = $collection;
+    $this->color = $color;
+}
+    public function getPen() {
         echo $this->marka . ' ' . $this->collection . ' ' . $this->color;
     }
 }
-$penParker = new BallpointPen();
-$penParker->marka = 'Parker';
-$penParker->collection = 'Jotter';
-$penParker->color = 'black';
-$penPero = new BallpointPen();
-$penPero->marka = 'Pero';
-$penPero->collection = 'Caran';
-$penPero->color = 'black';
+$penParker = new BallpointPen('Parker', 'Jotter', 'black');
+$penPero = new BallpointPen('Pero', 'Caran', 'black');
 
-// Утка
-class Duck
-{
-    public $species;
-    public $habitat;
-    public $edible;
-    public function getDuck()
-    {
-        echo $this->species . ', be: ' . $this->habitat . ' ' . $this->edible;
+class Duck {
+    public function __construct($species, $habitat, $edible) {
+    $this->species = $species;
+    $this->habitat = $habitat;
+    $this->edible = $edible;
+}
+    public function getDuck() {
+        echo $this->species . ', be: ' . $this->habitat . '. Edible? ' . $this->edible;
     } 
 }    
-$duckEn = new Duck();
-$duckEn->species = 'Scrooge McDuck ';
-$duckEn->habitat = 'Disney';
-$duckEn->edible = false;
-$duckRu = new Duck();
-$duckRu->species = 'Drake';
-$duckRu->habitat = 'Altai';
-$duckRu->edible = true;
-// Товар
+$duckEn = new Duck('Scrooge McDuck', 'Disney', 'No. It \'s a rich duck');
+$duckRu = new Duck('Drake', 'Altai', 'Yes');
+// Оставляю для наглядности пример с товарами  как   __construct уменьшает и упрощает код
 class Goods
 {
     public $name;
@@ -96,125 +74,20 @@ $goodsPhone->price = 40000;
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><?php
-// Машина
-class AvtoPro
-{
-    public $marka;
-    public $modelavto;
-    public $coloravto;
-}
-class Car extends AvtoPro
-{
-    public function getCar()
-    {
-        $html = $this->marka . ' ' . $this->modelavto . ' ' . $this->coloravto;
-        return $html;
-    }
-}
-$сarBMV = new Car();
-$сarBMV->marka = 'BMV';
-$сarBMV->modelavto = 'i8';
-$сarBMV->coloravto = 'red';
-$сarCooper = new Car();
-$сarCooper->marka = 'MINI';
-$сarCooper->modelavto = 'Cooper';
-$сarCooper->coloravto = 'grey';
-// Телевизор
-class TV
-{
-    public $markamodel;
-    public $resolution;
-    public $diagonal;
-    public function getTV()
-    {
-        echo $this->markamodel . ' ' . $this->resolution . ' ' . $this->diagonal;
-    }
-}
-$tvSony = new TV();
-$tvSony->markamodel = 'Sony KD-65XE9305';
-$tvSony->resolution = 'HDR';
-$tvSony->diagonal = 46;
-$tvLG = new TV();
-$tvLG->markamodel = 'LG 43UH610V';
-$tvLG->resolution = '4K';
-$tvLG->diagonal = 49;
-// Шариковая ручка
-class BallpointPen
-{
-    public $marka;
-    public $collection;
-    public $color;
-    public function getPen()
-    {
-        echo $this->marka . ' ' . $this->collection . ' ' . $this->color;
-    }
-}
-$penParker = new BallpointPen();
-$penParker->marka = 'Parker';
-$penParker->collection = 'Jotter';
-$penParker->color = 'black';
-$penPero = new BallpointPen();
-$penPero->marka = 'Pero';
-$penPero->collection = 'Caran';
-$penPero->color = 'black';
-// Утка
-class Duck
-{
-    public $species;
-    public $habitat;
-    public $edible;
-    public function getDuck()
-    {
-        echo $this->species . ', be: ' . $this->habitat . ', you can eat? ' . $this->edible;
-    } 
-}    
-$duckEn = new Duck();
-$duckEn->species = 'Scrooge McDuck ';
-$duckEn->habitat = 'Disney';
-$duckEn->edible = 'No';
-$duckRu = new Duck();
-$duckRu->species = 'Drake';
-$duckRu->habitat = 'Altai';
-$duckRu->edible = 'Yes';
-// Товар
-class Goods
-{
-    public $name;
-    public $category;
-    public $price;
-    public function getGoods()
-    {
-        echo $this->name . ' ' . $this->category . ' ' . $this->price;
-    }
-}
-$goodsCrisp = new Goods();
-$goodsCrisp->name = 'Lays';
-$goodsCrisp->category = 'FoodFastFood';
-$goodsCrisp->price = 69;
-$goodsPhone = new Goods();
-$goodsPhone->name = 'Sony X';
-$goodsPhone->category = 'Flagship';
-$goodsPhone->price = 39000;
-?>
-
-<!doctype html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
 
     <title>Document</title>
 </head>
 <body>
-<?=$сarCooper->getCar() . '<br>';?>
-<?=$сarBMV->getCar() . '<br>' . '<hr>';?>
-<?=$tvSony->getTV() . '<br>';?>
-<?=$tvLG->getTV() . '<br>' . '<hr>';?>
-<?=$penParker->getPen() . '<br>';?>
-<?=$penPero->getPen() . '<br>' .'<hr>';?>
-<?=$duckEn->getDuck() . '<br>';?>
-<?=$duckRu->getDuck() . '<br>' .'<hr>';?>
-<?=$goodsCrisp->getGoods() . '<br>';?>
-<?=$goodsPhone->getGoods() . '<br>' .'<hr>';?>
+  <?=$сarBMV->getPrice() . '<br>';?>
+  <?=$сarCooper->getPrice() . '<br>' . '<hr>';?>
+  <?=$tvSony->getTV() . '<br>';?>
+  <?=$tvLG->getTV() . '<br>' . '<hr>';?>
+  <?=$penParker->getPen() . '<br>';?>
+  <?=$penPero->getPen() . '<br>' .'<hr>';?>
+  <?=$duckEn->getDuck() . '<br>';?>
+  <?=$duckRu->getDuck() . '<br>' .'<hr>';?>
+  <?=$goodsCrisp->getGoods() . '<br>';?>
+  <?=$goodsPhone->getGoods() . '<br>' .'<hr>';?>
 </body>
 </html>
